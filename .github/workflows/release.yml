@@ -39,7 +39,7 @@ jobs:
         uses: mukunku/tag-exists-action@v1.4.0
         id: check-tag
         with:
-          tag: "${{ steps.package-version.outputs.version }}"
+          tag: '${{ steps.package-version.outputs.version }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -47,8 +47,8 @@ jobs:
         if: steps.check-tag.outputs.exists == 'false'
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: "${{ steps.package-version.outputs.version }}"
-          name: "${{ steps.package-version.outputs.version }}"
+          tag_name: '${{ steps.package-version.outputs.version }}'
+          name: '${{ steps.package-version.outputs.version }}'
           generate_release_notes: true
           files: |
             dist/*.user.js
